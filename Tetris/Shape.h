@@ -14,6 +14,7 @@ public:
 	void tourne();
 	int getX();
 	int getY();
+	int getType();
 
 private:
 	int type;

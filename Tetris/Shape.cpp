@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Shape.h"
+#include "TableauForme.h"
 using namespace std;
 
 #include <cstdlib>
@@ -28,8 +29,14 @@ vector<float> shape::getColor() {
 
 vector<int> shape::getAllPositions() {
 	vector<int> pos;
-	pos.push_back(x);
-	pos.push_back(y);
+	pos.push_back(tableauFormes[type][rotation][0]+x);
+	pos.push_back(tableauFormes[type][rotation][1]+y);
+	pos.push_back(tableauFormes[type][rotation][2]+x);
+	pos.push_back(tableauFormes[type][rotation][3]+y);
+	pos.push_back(tableauFormes[type][rotation][4]+x);
+	pos.push_back(tableauFormes[type][rotation][5]+y);
+	pos.push_back(tableauFormes[type][rotation][6]+x);
+	pos.push_back(tableauFormes[type][rotation][7]+y);
 	return pos;
 }
 
