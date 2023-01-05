@@ -5,8 +5,9 @@ using namespace std;
 class shape
 {
 public:
-	shape(int type, vector<int> color);
-	vector<int> getColor();
+	shape();
+	shape(int type, vector<float> color);
+	vector<float> getColor();
 	vector<int> getAllPositions();
 	void fall();
 	void translate(bool direction);
@@ -17,7 +18,7 @@ private:
 	int rotation;
 	int x;
 	int y;
-	vector<int> color;
+	vector<float> color;
 
 };
 
