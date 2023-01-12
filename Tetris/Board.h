@@ -4,7 +4,7 @@ class board
 {
 public:
 	board();
-	void display();
+	vector<vector<vector<float>>> display();
 	bool contact();
 	void merge();
 	int deleteLine();
