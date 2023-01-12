@@ -6,7 +6,7 @@ class gameManager
 public:
 	gameManager();
 
-	void nextTurn();
+	void nextTurn(int);
 	vector<vector<vector<float>>> display();
 
 	void nextTurn(int);

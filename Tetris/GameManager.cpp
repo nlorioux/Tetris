@@ -8,7 +8,8 @@ gameManager::gameManager() {
 }
 
 vector<vector<vector<float>>> gameManager::display() {
-	return board.display();
+	return B.display();
+}
 
 void gameManager::nextTurn(int key = 0) {
 	switch (key)
@@ -27,7 +28,7 @@ void gameManager::nextTurn(int key = 0) {
 		break;
 	case 4:
 		B.rotate();
-		break
+		break;
 	}
 
 	if (!B.contact())
