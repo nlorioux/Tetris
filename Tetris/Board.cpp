@@ -140,9 +140,9 @@ vector<vector<vector<float>>> board::display() {
 	vector<vector<vector<float>>> toDisplay;
 
 	for (int x = 0; x < 10; x++) {
-		vector<vector<float>> colone;
+		vector<vector<float>> colone = new vector<vector<float>>;
 		for (int y = 0; y <20; y++) {
-			vector<float> color;
+			vector<float> color = new vector<float>;
 			for (int c = 0; c < 3; c++) {
 				color.push_back(grid[x][y][c]);
 			}
