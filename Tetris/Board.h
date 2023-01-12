@@ -1,5 +1,6 @@
 #pragma once
-# include "Shape.h"
+#include "Shape.h"
+
 class board
 {
 public:
@@ -7,13 +8,12 @@ public:
 	vector<vector<vector<float>>> display();
 	bool contact();
 	void merge();
-	int deleteLine();
+	void deleteLine();
 	shape getCurrentShape();
 	void setCurrentShape(shape S);
 	void fall();
 	void translate(bool direction); //0 gauche
 	void rotate();
-
 private:
 	float grid[10][20][3];
 	shape currentShape;

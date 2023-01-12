@@ -3,7 +3,6 @@
 using namespace std;
 
 gameManager::gameManager() {
-	B = board();
 	score = 0;
 }
 
@@ -38,5 +37,7 @@ void gameManager::nextTurn(int key = 0) {
 
 	if (B.contact()) {
 		B.merge();
+		B.deleteLine();
 	}
+
 }

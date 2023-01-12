@@ -21,6 +21,5 @@ private:
 	int x;
 	int y;
 	vector<float> color;
-
 };
 
