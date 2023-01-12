@@ -118,7 +118,7 @@ void board::merge() {
 			int x = pos[i * 2];
 			int y = pos[i * 2 + 1];
 			if (currentShape.getColor().size() == 3) {
-				grid[x][y] = { currentShape.getColor[0],currentShape.getColor[1],currentShape.getColor[2] }
+				grid[x][y] = { currentShape.getColor[0],currentShape.getColor[1],currentShape.getColor[2] };
 			}
 		}
 	}
@@ -149,6 +149,15 @@ vector<vector<vector<float>>> board::display() {
 			colone.push_back(color);
 		}
 		toDisplay.push_back(colone);
+	}
+
+	vector<int> pos = currentShape.getAllPositions();
+	if (pos.size() == 8) {
+		for (int i = 0; i < 4; i++) {
+			int x = pos[i * 2];
+			int y = pos[i * 2 + 1];
+			toDisplay[x][y] = { currentShape.getColor[0],currentShape.getColor[1],currentShape.getColor[2] };
+		}
 	}
 	return toDisplay;
 }
