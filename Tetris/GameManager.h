@@ -6,11 +6,8 @@ class gameManager
 public:
 	gameManager();
 
-	void nextTurn();
-	vector<vector<vector<float>>> display();
-
 	void nextTurn(int);
-
+	vector<vector<vector<float>>> display();
 private:
 	board B;
 	int score;

@@ -14,7 +14,6 @@ public:
 	void tourne();
 	int getX();
 	int getY();
-	int getType();
 
 private:
 	int type;
@@ -22,6 +21,5 @@ private:
 	int x;
 	int y;
 	vector<float> color;
-
 };
 

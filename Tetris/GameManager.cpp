@@ -3,12 +3,12 @@
 using namespace std;
 
 gameManager::gameManager() {
-	B = board();
 	score = 0;
 }
 
 vector<vector<vector<float>>> gameManager::display() {
-	return board.display();
+	return B.display();
+}
 
 void gameManager::nextTurn(int key = 0) {
 	switch (key)
@@ -27,7 +27,7 @@ void gameManager::nextTurn(int key = 0) {
 		break;
 	case 4:
 		B.rotate();
-		break
+		break;
 	}
 
 	if (!B.contact())
@@ -37,5 +37,7 @@ void gameManager::nextTurn(int key = 0) {
 
 	if (B.contact()) {
 		B.merge();
+		B.deleteLine();
 	}
+
 }
