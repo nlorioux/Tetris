@@ -17,6 +17,7 @@ public:
 private:
 	float grid[10][20][3];
 	shape currentShape;
+	void deleteLineByID(int k);
 };
 
 

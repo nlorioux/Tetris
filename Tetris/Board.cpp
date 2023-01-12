@@ -20,6 +20,42 @@ board::board() {
 	currentShape = shape(type, color);
 }
 
+void board::deleteLineByID(int k) {
+	for (int j = k; j < 20; j++) {
+		if (j != 0) {
+			for (int i = 0; i < 10; i++) {
+				grid[i][j - 1][0] = grid[i][j][0];
+				grid[i][j - 1][1] = grid[i][j][1];
+				grid[i][j - 1][2] = grid[i][j][2];
+			}
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+		grid[i][19][0] = 0;
+		grid[i][19][1] = 0;
+		grid[i][19][2] = 0;
+	}
+}
+
+int board::deleteLine() {
+	bool fullLine = true;
+	vector<int> deletedLines;
+	for (int j = 0; j < 20; j++) {
+		for (int i = 0; i < 10; i++) {
+			if (grid[i][j][0] == 0 && grid[i][j][1] == 0 && grid[i][j][2] == 0) {
+				fullLine = false;
+			}
+			if (fullLine && j == 19) {
+				deletedLines.push_back(j);
+			}
+			
+		}
+	}
+	for (int j = deletedLines.size() - j; j > 0; j--) {
+		deleteLineByID(j);
+	}
+}
+
 shape board::getCurrentShape() {
 	return currentShape;
 }
