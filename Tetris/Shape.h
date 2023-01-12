@@ -9,9 +9,12 @@ public:
 	shape(int type, vector<float> color);
 	vector<float> getColor();
 	vector<int> getAllPositions();
-	void fall();
-	void translate(bool direction);
-	void rotate();
+	void setX(int a);
+	void setY(int b);
+	void tourne();
+	int getX();
+	int getY();
+	int getType();
 
 private:
 	int type;
