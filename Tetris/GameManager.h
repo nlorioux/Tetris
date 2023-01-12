@@ -5,7 +5,7 @@ class gameManager
 {
 public:
 	gameManager();
-	void nextTurn();
+	void nextTurn(int);
 
 private:
 	board B;
