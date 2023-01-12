@@ -145,6 +145,7 @@
     <ClCompile Include="Tetris.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Tetris2\Tetris\TableauForme.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Shape.h" />

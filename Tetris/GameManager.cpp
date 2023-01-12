@@ -7,6 +7,9 @@ gameManager::gameManager() {
 	score = 0;
 }
 
+vector<vector<vector<float>>> gameManager::display() {
+	return board.display();
+
 void gameManager::nextTurn(int key = 0) {
 	switch (key)
 	{
