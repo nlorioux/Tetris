@@ -44,7 +44,7 @@ void board::deleteLineByID(int k) {
 	}
 }
 
- void board::deleteLine() {
+ int board::deleteLine() {
 	bool fullLine;
 	vector<int> deletedLines;
 	for (int j = 0; j < 20; j++) {
@@ -63,6 +63,8 @@ void board::deleteLineByID(int k) {
 	for (int j = deletedLines.size(); j > 0; j--) {
 		deleteLineByID(j);
 	}
+
+	return(deletedLines.size());
 }
 
 shape board::getCurrentShape() {
@@ -163,9 +165,14 @@ void board::merge() {
 			int x = pos[i * 2];
 			int y = pos[i * 2 + 1];
 			if (currentShape.getColor().size() == 3) {
-				grid[x][y][0] = currentShape.getColor()[0];
-				grid[x][y][1] = currentShape.getColor()[1];
-				grid[x][y][2] = currentShape.getColor()[2];
+				if (y >= 0 || y < 20) {
+					grid[x][y][0] = currentShape.getColor()[0];
+					grid[x][y][1] = currentShape.getColor()[1];
+					grid[x][y][2] = currentShape.getColor()[2];
+				}
+				else {
+					cout << "error of merge";
+				}
 			}
 		}
 	}
@@ -205,7 +212,7 @@ vector<vector<vector<float>>> board::display() {
 			int x = pos[i * 2];
 			int y = pos[i * 2 + 1];
 			vector<float> color = currentShape.getColor();
-			if (y < 20 && x < 10 && x >= 0) {
+			if (y < 20 && x < 10 && x >= 0 && y>=0) {
 				toDisplay[x][y][0] = color[0];
 				toDisplay[x][y][1] = color[1];
 				toDisplay[x][y][2] = color[2];
@@ -213,4 +220,14 @@ vector<vector<vector<float>>> board::display() {
 		}
 	}
 	return toDisplay;
+}
+
+bool board::gameOver() {
+	bool gameOver = false;
+	for (int i = 0; i < 10; i++) {
+		if (grid[i][19][0] != 0 || grid[i][19][1] != 0 || grid[i][19][2] != 0) {
+			gameOver = true;
+		}
+	}
+	return gameOver;
 }

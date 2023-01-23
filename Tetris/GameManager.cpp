@@ -10,7 +10,8 @@ vector<vector<vector<float>>> gameManager::display() {
 	return B.display();
 }
 
-void gameManager::nextTurn(int key = 0) {
+bool gameManager::nextTurn(int key = 0) {
+	int scorePlus = 0;
 	switch (key)
 	{
 	case 1:
@@ -37,7 +38,7 @@ void gameManager::nextTurn(int key = 0) {
 
 	if (B.contact()) {
 		B.merge();
-		B.deleteLine();
+		score += 10*B.deleteLine();
 	}
-
+	return B.gameOver();
 }
