@@ -44,4 +44,9 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="game_music.wav">
+      <Filter>Fichiers sources</Filter>
+    </Media>
+  </ItemGroup>
 </Project>
