@@ -10,7 +10,22 @@ vector<vector<vector<float>>> gameManager::display() {
 	return B.display();
 }
 
-void gameManager::nextTurn(int key = 0) {
+void gameManager::nextTurn() {
+
+	if (!B.contact())
+	{
+		B.fall();
+	}
+
+	if (B.contact()) {
+		B.merge();
+		B.deleteLine();
+		newShapeSpawned = true;
+	}
+
+}
+
+void gameManager::onKeyPress(int key = 0) {
 	switch (key)
 	{
 	case 1:
@@ -30,14 +45,9 @@ void gameManager::nextTurn(int key = 0) {
 		break;
 	}
 
-	if (!B.contact())
-	{
-		B.fall();
-	}
-
 	if (B.contact()) {
 		B.merge();
 		B.deleteLine();
+		newShapeSpawned = true;
 	}
-
 }

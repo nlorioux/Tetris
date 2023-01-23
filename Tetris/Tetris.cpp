@@ -67,9 +67,6 @@ int windowH = 900;
 gameManager GM;
 vector<vector<vector<float>>> grid;
 
-int action;
-//[10][20][3] = { 0 };
-
 
 //float near = 0.1f;
 //float far = 100.0f;
@@ -84,6 +81,7 @@ GLuint textureID = 0;
 bool LoadJPEG(char* FileName, bool Fast = true);
 auto startTime = chrono::system_clock::now();
 double timer=0;
+double moveSpeed = 0.3;
 // TEXTURE
 unsigned long x;
 unsigned long y;
@@ -168,10 +166,14 @@ GLvoid displayMetris() {
     auto currentTime = chrono::system_clock::now();
     chrono::duration<double> elapsed = currentTime - startTime;
     timer += elapsed.count();
-    if (timer > 0.3) {
-        GM.nextTurn(action);
-        action = 0;
+    if (timer > moveSpeed) {
+        GM.nextTurn();
         timer = 0;
+        if (moveSpeed>0.1 && GM.getNewShapeSpawned())
+        {
+            moveSpeed -= 0.05;
+            GM.setNewShapeSpawned(false);
+        }
     }
     startTime = currentTime;
 
@@ -279,23 +281,7 @@ GLvoid displayGrid(std::vector<std::vector<std::vector<float>>> grid) {
 
 // Définition de la fonction gérant les interruptions clavier
 GLvoid clavier(int touche, int x, int y) {
-    switch (touche) {
-    case GLUT_KEY_UP:
-        action = 4;
-        break;
-    case GLUT_KEY_DOWN:
-        action = 1;
-        break;
-    case GLUT_KEY_RIGHT:
-        action = 3;
-        break;
-    case GLUT_KEY_LEFT:
-        action = 2;
-        break;
-    case 27:
-        exit(0);
-        break;
-    }
+    GM.onKeyPress(touche);
     // Demande a GLUT de réafficher la scene
     glutPostRedisplay();
 }
