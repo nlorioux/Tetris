@@ -28,7 +28,7 @@ board::board() {
 }
 
 void board::deleteLineByID(int k) {
-	for (int j = k; j < 20; j++) {
+	for (int j = k+1; j < 20; j++) {
 		if (j != 0) {
 			for (int i = 0; i < 10; i++) {
 				grid[i][j - 1][0] = grid[i][j][0];
@@ -59,8 +59,8 @@ void board::deleteLineByID(int k) {
 			}
 		}
 	}
-	for (int j = deletedLines.size(); j > 0; j--) {
-		deleteLineByID(j);
+	for (int j = deletedLines.size()-1; j >= 0; j--) {
+		deleteLineByID(deletedLines[j]);
 	}
 
 	return(deletedLines.size());

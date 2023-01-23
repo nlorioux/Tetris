@@ -20,7 +20,7 @@
 #include <chrono>
 
 //SFML
-//#include <SFML/Audio.hpp>
+#include <SFML/Audio.hpp>
 
 
 
@@ -297,10 +297,10 @@ GLvoid clavier(int touche, int x, int y) {
 int main(int argc, char* argv[])
 {
 
-    //sf::Music music;
-    //if (!music.openFromFile("game_music.wav"))
-    //    return -1; // error
-    //music.play();
+    sf::Music music;
+    if (!music.openFromFile("game_music.wav"))
+        return -1; // error
+    music.play();
     
     srand(time(NULL));
 
