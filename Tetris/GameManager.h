@@ -5,8 +5,10 @@ class gameManager
 {
 public:
 	gameManager();
+
 	int score;
-	bool nextTurn(int);
+	bool nextTurn();
+	void onKeyPress(int);
 	vector<vector<vector<float>>> display();
 private:
 	board B;
