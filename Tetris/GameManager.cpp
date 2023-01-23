@@ -10,8 +10,22 @@ vector<vector<vector<float>>> gameManager::display() {
 	return B.display();
 }
 
-bool gameManager::nextTurn(int key = 0) {
-	int scorePlus = 0;
+
+bool gameManager::nextTurn() {
+	if (!B.contact())
+	{
+		B.fall();
+	}
+
+	if (B.contact()) {
+		B.merge();
+		score += 10*B.deleteLine();
+		newShapeSpawned = true;
+	}
+	return B.gameOver();
+}
+
+void gameManager::onKeyPress(int key = 0) {
 	switch (key)
 	{
 	case 1:
@@ -31,14 +45,9 @@ bool gameManager::nextTurn(int key = 0) {
 		break;
 	}
 
-	if (!B.contact())
-	{
-		B.fall();
-	}
-
 	if (B.contact()) {
 		B.merge();
 		score += 10*B.deleteLine();
+		newShapeSpawned = true;
 	}
-	return B.gameOver();
 }
