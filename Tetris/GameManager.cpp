@@ -19,35 +19,33 @@ bool gameManager::nextTurn() {
 
 	if (B.contact()) {
 		B.merge();
-		score += 10*B.deleteLine();
-		newShapeSpawned = true;
 	}
+	score += 10 * B.deleteLine();
 	return B.gameOver();
 }
 
 void gameManager::onKeyPress(int key = 0) {
 	switch (key)
 	{
-	case 1:
+	case 103:
 		while (!B.contact())
 		{
 			B.fall();
 		}
 		break;
-	case 2:
+	case 100:
 		B.translate(0);
 		break;
-	case 3:
+	case 102:
 		B.translate(1);
 		break;
-	case 4:
+	case 101:
 		B.rotate();
 		break;
 	}
 
 	if (B.contact()) {
 		B.merge();
-		score += 10*B.deleteLine();
-		newShapeSpawned = true;
 	}
+	score += 10 * B.deleteLine();
 }

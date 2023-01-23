@@ -172,10 +172,9 @@ GLvoid displayMetris() {
     if (timer > moveSpeed) {
         GM.nextTurn();
         timer = 0;
-        if (moveSpeed>0.1 && GM.getNewShapeSpawned())
+        if (moveSpeed>0.2)
         {
-            moveSpeed -= 0.05;
-            GM.setNewShapeSpawned(false);
+            moveSpeed = 0.3 - 0.001 * GM.score;
         }
     }
     startTime = currentTime;

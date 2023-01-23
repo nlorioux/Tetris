@@ -59,7 +59,6 @@ void board::deleteLineByID(int k) {
 			}
 		}
 	}
-	cout << "deletedLines.size() : " << deletedLines.size() << endl;
 	for (int j = deletedLines.size(); j > 0; j--) {
 		deleteLineByID(j);
 	}
