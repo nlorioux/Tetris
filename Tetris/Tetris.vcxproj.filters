@@ -40,13 +40,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="METRIS_Background.jpg">
-      <Filter>Fichiers de ressources</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <Media Include="game_music.wav">
       <Filter>Fichiers sources</Filter>
     </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="METRIS_Background.jpg">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

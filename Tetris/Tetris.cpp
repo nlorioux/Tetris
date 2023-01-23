@@ -20,7 +20,7 @@
 #include <chrono>
 
 //SFML
-#include <SFML/Audio.hpp>
+//#include <SFML/Audio.hpp>
 
 
 
@@ -44,7 +44,7 @@ float xOrigin = -1.0f;
 float yOrigin = -1.0f;
 float zOrigin = 0.0f;
 
-
+bool GAMEOVER = false;
 
 // Indice des coordonnees de texture
 typedef struct {
@@ -164,27 +164,31 @@ bool LoadJPEG(const char* FileName, bool Fast)
 }
 
 GLvoid displayMetris() {
-    displayBackground();
-    
-    auto currentTime = chrono::system_clock::now();
-    chrono::duration<double> elapsed = currentTime - startTime;
-    timer += elapsed.count();
-    if (timer > moveSpeed) {
-        GM.nextTurn();
-        timer = 0;
-        if (moveSpeed>0.2)
-        {
-            moveSpeed = 0.3 - 0.001 * GM.score;
+    if (!GAMEOVER) {
+        displayBackground();
+
+        auto currentTime = chrono::system_clock::now();
+        chrono::duration<double> elapsed = currentTime - startTime;
+        timer += elapsed.count();
+        if (timer > moveSpeed) {
+            GAMEOVER = GM.nextTurn();
+            cout << "score :" << GM.score << endl;
+            timer = 0;
+            if (moveSpeed > 0.2)
+            {
+                moveSpeed = 0.3 - 0.001 * GM.score;
+            }
         }
+        startTime = currentTime;
+        displayGrid(GM.display());
+        glFlush();
+        glutSwapBuffers();
     }
-    startTime = currentTime;
+    else {
+        cout << "GAME OVER !\n Ton score est de : " << GM.score;
+        exit(0);
+    }
 
-    //grid.clear();
-    //grid = GM.display();
-    displayGrid(GM.display());
-
-    glFlush();
-    glutSwapBuffers();
 }
 
 
@@ -293,10 +297,10 @@ GLvoid clavier(int touche, int x, int y) {
 int main(int argc, char* argv[])
 {
 
-    sf::Music music;
-    if (!music.openFromFile("game_music.wav"))
-        return -1; // error
-    music.play();
+    //sf::Music music;
+    //if (!music.openFromFile("game_music.wav"))
+    //    return -1; // error
+    //music.play();
     
     srand(time(NULL));
 
