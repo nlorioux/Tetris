@@ -1,0 +1,80 @@
+\hypertarget{classboard}{}\doxysection{board Class Reference}
+\label{classboard}\index{board@{board}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ vector$<$ vector$<$ float $>$ $>$ $>$ \mbox{\hyperlink{classboard_a6960781cd228ba16d163b574ae80f260}{display}} ()
+\begin{DoxyCompactList}\small\item\em Method that displays the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classboard_a784bb4d986334f3f19d8f9570af58087}{contact}} ()
+\begin{DoxyCompactList}\small\item\em Method that checks if there is a contact between the current shape and the rest of the board. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classboard_abb0c6b7f9c18302d5cc2512eb7a800ac}\label{classboard_abb0c6b7f9c18302d5cc2512eb7a800ac}} 
+void {\bfseries merge} ()
+\begin{DoxyCompactList}\small\item\em Method that merges the current shape with the board. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classboard_a45841c488c86a84fe3b205c729660402}{delete\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Method that deletes lines when they are full, can delete multiple lines at the same time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classboard_a38adf5c8f99bb307c7c2f50ef9e8ef32}\label{classboard_a38adf5c8f99bb307c7c2f50ef9e8ef32}} 
+\mbox{\hyperlink{classshape}{shape}} {\bfseries get\+Current\+Shape} ()
+\item 
+\mbox{\Hypertarget{classboard_a8749b3885d65291f4c70516a153a92e1}\label{classboard_a8749b3885d65291f4c70516a153a92e1}} 
+void {\bfseries set\+Current\+Shape} (\mbox{\hyperlink{classshape}{shape}} S)
+\item 
+\mbox{\Hypertarget{classboard_a04ff5dc3700903eba3d6b818bc4ee3ca}\label{classboard_a04ff5dc3700903eba3d6b818bc4ee3ca}} 
+void {\bfseries fall} ()
+\item 
+\mbox{\Hypertarget{classboard_a80eb3fa25600ab1f61d818eed34325e6}\label{classboard_a80eb3fa25600ab1f61d818eed34325e6}} 
+void {\bfseries translate} (bool direction)
+\item 
+\mbox{\Hypertarget{classboard_a8c1a2ce87e774475be4b1506ae61fd9e}\label{classboard_a8c1a2ce87e774475be4b1506ae61fd9e}} 
+void {\bfseries rotate} ()
+\item 
+\mbox{\Hypertarget{classboard_a135ff2bd2c855f7ed835d5cd49ba16d6}\label{classboard_a135ff2bd2c855f7ed835d5cd49ba16d6}} 
+bool {\bfseries game\+Over} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classboard_a784bb4d986334f3f19d8f9570af58087}\label{classboard_a784bb4d986334f3f19d8f9570af58087}} 
+\index{board@{board}!contact@{contact}}
+\index{contact@{contact}!board@{board}}
+\doxysubsubsection{\texorpdfstring{contact()}{contact()}}
+{\footnotesize\ttfamily bool board\+::contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that checks if there is a contact between the current shape and the rest of the board. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if there is a contact, false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classboard_a45841c488c86a84fe3b205c729660402}\label{classboard_a45841c488c86a84fe3b205c729660402}} 
+\index{board@{board}!deleteLine@{deleteLine}}
+\index{deleteLine@{deleteLine}!board@{board}}
+\doxysubsubsection{\texorpdfstring{deleteLine()}{deleteLine()}}
+{\footnotesize\ttfamily int board\+::delete\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that deletes lines when they are full, can delete multiple lines at the same time. 
+
+\begin{DoxyReturn}{Returns}
+Returns the number of deleted lines.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classboard_a6960781cd228ba16d163b574ae80f260}\label{classboard_a6960781cd228ba16d163b574ae80f260}} 
+\index{board@{board}!display@{display}}
+\index{display@{display}!board@{board}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ vector$<$ float $>$ $>$ $>$ board\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that displays the board. 
+
+\begin{DoxyReturn}{Returns}
+Returns the board as a matrix (vector of vectors) of colors.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Board.\+h\item 
+Board.\+cpp\end{DoxyCompactItemize}

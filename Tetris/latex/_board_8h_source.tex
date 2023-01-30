@@ -1,0 +1,32 @@
+\hypertarget{_board_8h_source}{}\doxysection{Board.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Shape.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classboard}{board}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{classboard}{board}}();}
+\DoxyCodeLine{00012\ \ \ \ \ vector<vector<vector<float>>>\ \mbox{\hyperlink{classboard_a6960781cd228ba16d163b574ae80f260}{display}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classboard_a784bb4d986334f3f19d8f9570af58087}{contact}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classboard_abb0c6b7f9c18302d5cc2512eb7a800ac}{merge}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classboard_a45841c488c86a84fe3b205c729660402}{deleteLine}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classshape}{shape}}\ getCurrentShape();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setCurrentShape(\mbox{\hyperlink{classshape}{shape}}\ S);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ fall();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ translate(\textcolor{keywordtype}{bool}\ direction);\ \textcolor{comment}{//0\ gauche}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ rotate();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameOver();}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ grid[10][20][3];}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classshape}{shape}}\ currentShape;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ deleteLineByID(\textcolor{keywordtype}{int}\ k);}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+
+\end{DoxyCode}
